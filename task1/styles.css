@@ -1,0 +1,68 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.row-one,
+.row-two,
+.row-three {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.one,
+.two,
+.three,
+.four {
+  width: 100px;
+  height: 100px;
+  background-image: url("https://via.placeholder.com/100");
+  margin: 13% auto;
+}
+
+.one:hover,
+.two:hover,
+.three:hover,
+.four:hover {
+  animation: rotate-scale-up 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+}
+
+@keyframes rotate-scale-up {
+  0% {
+    transform: scale(1) rotateZ(0);
+  }
+  50% {
+    transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .row-one,
+  .row-two,
+  .row-three {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 575px) and (max-width: 1024px) {
+  .one,
+  .two,
+  .three,
+  .four {
+    margin: 13%;
+  }
+}
